@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
+import { Maven_Pro } from "next/font/google";
 import "./globals.css";
 import FileTree from "@/components/FileTree";
 
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
+const mavenPro = Maven_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "whitcodes",
@@ -17,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sourceCodePro.className}>
+      <body className={mavenPro.className}>
         <div className="flex w-screen max-w-full">
           <FileTree/>
           <div className="pl-2 sm:pl-16">{children}</div>

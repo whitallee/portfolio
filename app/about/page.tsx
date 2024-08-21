@@ -17,7 +17,7 @@ export default function Projects() {
 
     return (
         <main className="h-screen max-h-screen flex flex-col items-start justify-start w-full gap-4 pt-16">
-        <h2 className="text-2xl sm:text-4xl pr-2 sm:pr-16">learn more about me</h2>
+        <h2 className="text-2xl sm:text-4xl pr-2 sm:pr-16">about me</h2>
         <div className="text-xl sm:text-2xl flex flex-col overflow-y-scroll pb-16">
             <p className="pr-2 sm:pr-16">My name is Whit Allee. I am a driven software engineer, self-taught, and highly motivated to grow and learn new things. If you&apos;d like to know about how I got here, feel free to scroll through my journey below.</p>
             <div className="flex flex-col w-full items-center pt-8 pr-2 sm:pr-16">

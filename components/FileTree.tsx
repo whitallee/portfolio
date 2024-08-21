@@ -1,14 +1,17 @@
 "use client"
 
+import { Source_Code_Pro } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export default function FileTree() {
     const path = usePathname()
     const currentPathClass = "px-2 sm:px-16 bg-gray-900"
     return (
         <>
-            <div className="flex flex-col gap-4 h-screen max-h-full border-r-2 pt-16 text-sm sm:text-lg">
+            <div className={sourceCodePro.className + " flex flex-col gap-4 h-screen max-h-full border-r-2 pt-16 text-sm sm:text-lg"}>
                 <span className="flex px-2 sm:px-16 text-teal-500">whitcodes.dev</span>
                 <div className="flex flex-col gap-4 indent-4 sm:indent-12">
                     <Link className={path === "/" ? currentPathClass : "px-2 sm:px-16"} href={"/"}>home.tsx</Link>
