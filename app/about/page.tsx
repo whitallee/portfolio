@@ -19,7 +19,7 @@ export default function Projects() {
         <main className="h-screen max-h-screen flex flex-col items-start justify-start w-full gap-4 pt-16">
         <h2 className="text-4xl">learn more about me</h2>
         <div className="text-2xl flex flex-col overflow-y-scroll pb-16">
-            <p className="pr-16">My name is Whit Allee. I am a driven software engineer, self-taught, and highly motivated to grow and learn new things. If you'd like to know about how I got here, feel free to scroll through my journey below.</p>
+            <p className="pr-16">My name is Whit Allee. I am a driven software engineer, self-taught, and highly motivated to grow and learn new things. If you&apos;d like to know about how I got here, feel free to scroll through my journey below.</p>
             <div className="flex flex-col w-full items-center pt-8 pr-16">
                 <span className="py-4">Today</span>
                 <TimelineConnector/>
@@ -40,7 +40,7 @@ export default function Projects() {
                 <TimelineItem
                     date="2022"
                     name="Harvard EDx CS50"
-                    description="I started my professional coding education by taking Harvard's intro to computer science course, building a strong foundation for a future in tech."
+                    description="I started my professional coding education by taking Harvard&apos;s intro to computer science course, building a strong foundation for a future in tech."
                     reverse={false}
                 ><Computer/></TimelineItem>
                 <TimelineConnector/>

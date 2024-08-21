@@ -35,7 +35,7 @@ export default function Projects() {
         <div className="flex flex-wrap gap-4 overflow-y-scroll pb-16">
             <Project
                 name="Animal Family"
-                description="A utility website to help keep track of all your animals' needs"
+                description="A utility website to help keep track of all your animals&apos; needs"
                 skills={["next", "react", "tailwind", "prisma", "next-auth", "postgresql", "zod"]}
                 githubLink="https://github.com/whitallee/animal-family" liveLink="https://animal-family.vercel.app/" imgSrc="/placeholder.jpg"
             ><div className="w-full h-full bg-green-800 flex justify-center items-center scale-[3]"><PawPrint/></div></Project>
@@ -59,13 +59,13 @@ export default function Projects() {
             ><div className="w-full h-full bg-green-600 flex justify-center items-center scale-[3]"><ChartNoAxesCombined/></div></Project>
             <Project
                 name="FlashMind"
-                description="A flashcard generator for learning about any topic that you'd like"
+                description="A flashcard generator for learning about any topic that you&apos;d like"
                 skills={["next", "react", "openai api", "material-ui", "clerk", "firebase", "stripe"]}
                 githubLink="https://github.com/cdogcoda/headstarter-week-4-flashcards" liveLink="" imgSrc="/placeholder.jpg"
             ><div className="w-full h-full bg-yellow-500 flex justify-center items-center scale-[3]"><Zap/></div></Project>
             <Project
                 name="Whit's Pantry"
-                description="A utility website for tracking what's in my pantry"
+                description="A utility website for tracking what&apos;s in my pantry"
                 skills={["next", "react", "openai api", "material-ui", "firebase", "firestore"]}
                 githubLink="https://github.com/whitallee/pantry-tracker" liveLink="https://whit-pantry-tracker.vercel.app/" imgSrc="/placeholder.jpg"
             ><div className="w-full h-full bg-yellow-900 flex justify-center items-center scale-[3]"><Drumstick/></div></Project>
