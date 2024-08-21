@@ -7,20 +7,20 @@ export default function Projects() {
 
     function TimelineItem({date, name, description, reverse, children}: {date: string, name: string, description: string, reverse: boolean, children: React.ReactNode}){
         return(
-            <div className="w-full flex gap-4 text-lg items-center">
-                <div className="flex-1 text-right">{reverse ? date : (<><h3>{name}</h3><p className="text-xs">{description}</p></>)}</div>
+            <div className={reverse ? "w-full flex flex-col-reverse sm:flex-row-reverse gap-1 sm:gap-4 text-lg items-center" : "w-full flex flex-col-reverse sm:flex-row gap-1 sm:gap-4 text-lg items-center"}>
+                <div className={reverse ? "flex-1 text-center sm:text-left" : "flex-1 text-center sm:text-right"}><><h3>{name}</h3><p className="text-xs pb-2 sm:pb-0">{description}</p></></div>
                 <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center">{children}</div>
-                <div className="flex-1 text-left">{reverse ? (<><h3>{name}</h3><p className="text-xs">{description}</p></>) : date}</div>
+                <div className={reverse ? "flex-1 text-center sm:text-right" : "flex-1 text-center sm:text-left"}>{date}</div>
             </div>
         )
     }
 
     return (
         <main className="h-screen max-h-screen flex flex-col items-start justify-start w-full gap-4 pt-16">
-        <h2 className="text-4xl">learn more about me</h2>
-        <div className="text-2xl flex flex-col overflow-y-scroll pb-16">
-            <p className="pr-16">My name is Whit Allee. I am a driven software engineer, self-taught, and highly motivated to grow and learn new things. If you&apos;d like to know about how I got here, feel free to scroll through my journey below.</p>
-            <div className="flex flex-col w-full items-center pt-8 pr-16">
+        <h2 className="text-2xl sm:text-4xl pr-2 sm:pr-16">learn more about me</h2>
+        <div className="text-xl sm:text-2xl flex flex-col overflow-y-scroll pb-16">
+            <p className="pr-2 sm:pr-16">My name is Whit Allee. I am a driven software engineer, self-taught, and highly motivated to grow and learn new things. If you&apos;d like to know about how I got here, feel free to scroll through my journey below.</p>
+            <div className="flex flex-col w-full items-center pt-8 pr-2 sm:pr-16">
                 <span className="py-4">Today</span>
                 <TimelineConnector/>
                 <TimelineItem

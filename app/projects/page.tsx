@@ -11,9 +11,9 @@ export default function Projects() {
             )
         })
         return (
-            <div className="w-60 bg-gray-800 rounded-xl flex flex-col gap-4 pb-2">
+            <div className="w-40 sm:w-60 bg-gray-800 rounded-xl flex flex-col gap-4 pb-2">
                 {/* <Image className="w-60 h-[7.5rem] object-cover rounded-xl" width={240} height={120} src={imgSrc} alt={"Screenshot of " + name} /> */}
-                <div className="w-60 h-[7.5rem] rounded-xl overflow-hidden">{children}</div>
+                <div className="w-40 sm:w-60 h-[7.5rem] rounded-xl overflow-hidden">{children}</div>
                 <div className="flex flex-col gap-4 px-2">
                     <h3 className="text-xl">{name}</h3>
                     <p className="text-xs">{description}</p>
@@ -31,7 +31,7 @@ export default function Projects() {
 
     return (
         <main className="h-screen max-h-screen flex flex-col items-start justify-start w-full gap-4 pt-16">
-        <h2 className="text-4xl">explore my projects</h2>
+        <h2 className="text-2xl sm:text-4xl">explore my projects</h2>
         <div className="flex flex-wrap gap-4 overflow-y-scroll pb-16">
             <Project
                 name="Animal Family"

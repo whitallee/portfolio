@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={sourceCodePro.className}>
         <div className="flex w-screen max-w-full">
           <FileTree/>
-          <div className="pl-16">{children}</div>
+          <div className="pl-2 sm:pl-16">{children}</div>
         </div>
       </body>
     </html>
