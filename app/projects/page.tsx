@@ -43,7 +43,7 @@ export default function Projects() {
                 name="Barking Beauties"
                 description="A landing page and informational site for clients who run a pet spa"
                 skills={["next", "react", "tailwind"]}
-                githubLink="https://github.com/whitallee/barkingbeauties" liveLink="https://bbpetsalon.com/" imgSrc="/placeholder.jpg"
+                githubLink="https://github.com/whitallee/barkingbeauties" liveLink="https://barkingbeauties.netlify.app/" imgSrc="/placeholder.jpg"
             ><div className="w-full h-full bg-[#c376ff] flex justify-center items-center scale-[3]"><Scissors/></div></Project>
             <Project
                 name="Maria Elena by Milan Creations"
