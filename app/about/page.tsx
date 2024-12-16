@@ -24,9 +24,9 @@ export default function Projects() {
                 <span className="py-4">Today</span>
                 <TimelineConnector/>
                 <TimelineItem
-                    date="2024 - currently attending"
+                    date="July-September 2024"
                     name="Headstarter AI Fellowship"
-                    description="I am tasked at building 5 AI projects in 5 weeks and a final project with a goal to acquire 1000 users or $1000 in revenue."
+                    description="I joined this fellowship between semesters where I built 5 AI projects in 5 weeks and a final project with a goal to acquire 1000 users or $1000 in revenue."
                     reverse={false}
                 ><BrainCircuit/></TimelineItem>
                 <TimelineConnector/>
