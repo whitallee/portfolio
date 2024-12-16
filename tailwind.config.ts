@@ -67,10 +67,18 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "cursor-blink" : {
+          "0%": { opacity: "0" },
+          "1%": { opacity: "100" },
+          "50%": { opacity: "100" },
+          "51%": { opacity: "0" },
+          "100%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "cursor-blink" : "cursor-blink 1s none infinite",
       },
     },
   },
