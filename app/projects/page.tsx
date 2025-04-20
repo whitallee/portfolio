@@ -1,4 +1,4 @@
-import { ChartNoAxesCombined, Drumstick, Gem, PawPrint, Scissors, Zap } from "lucide-react";
+import { ChartNoAxesCombined, Drumstick, Gem, PawPrint, Scissors, Zap, Squirrel } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -34,11 +34,17 @@ export default function Projects() {
         <h2 className="text-2xl sm:text-4xl">explore my projects</h2>
         <div className="flex flex-wrap gap-4 overflow-y-scroll pb-16">
             <Project
+                name="Brindle Backend"
+                description="A new and improved backend to be used for a revision of Animal Family for multiple platforms, mobile coming soon"
+                skills={["golang"]}
+                githubLink="https://github.com/whitallee/animal-family-backend" liveLink="" imgSrc="/placeholder.jpg"
+            ><div className="w-full h-full bg-gray-600 flex justify-center items-center scale-[3]"><Squirrel/></div></Project>
+            <Project
                 name="Animal Family"
                 description="A utility website to help keep track of all your animals&apos; needs"
                 skills={["next", "react", "tailwind", "prisma", "next-auth", "postgresql", "zod"]}
                 githubLink="https://github.com/whitallee/animal-family" liveLink="https://animal-family.vercel.app/" imgSrc="/placeholder.jpg"
-            ><div className="w-full h-full bg-green-800 flex justify-center items-center scale-[3]"><PawPrint/></div></Project>
+            ><div className="w-full h-full bg-green-900 flex justify-center items-center scale-[3]"><PawPrint/></div></Project>
             <Project
                 name="Barking Beauties"
                 description="A landing page and informational site for clients who run a pet spa"
