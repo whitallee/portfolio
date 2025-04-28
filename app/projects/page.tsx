@@ -1,21 +1,31 @@
-import { ChartNoAxesCombined, Drumstick, Gem, PawPrint, Scissors, Zap, Squirrel, Trash } from "lucide-react";
+import { ChartNoAxesCombined, Drumstick, Gem, PawPrint, Scissors, Zap, Squirrel, Trash, Trophy } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Projects() {
 
-    function Project ({children, name, description, skills, githubLink, liveLink, imgSrc}: {children:React.ReactNode, name: string, description: string, skills: string[], githubLink: string, liveLink: string, imgSrc: string}) {
+    function Project ({children, name, description, skills, githubLink, liveLink, imgSrc, hasAward}: {children:React.ReactNode, name: string, description: string, skills: string[], githubLink: string, liveLink: string, imgSrc: string, hasAward?: boolean}) {
         const skillsComponents = skills.map((skill, index) => {
             return(
                 <span className="text-xs py-1 px-2 border-teal-700 border-2 rounded-full" key={index}>{skill}</span>
             )
         })
         return (
-            <div className="w-40 sm:w-60 bg-gray-800 rounded-xl flex flex-col gap-4 pb-2 hover:scale-[1.03] transition-all duration-300">
+            <div className="w-40 sm:w-60 bg-gray-800 rounded-xl flex flex-col gap-4 pb-2 hover:scale-[1.03] transition-all duration-300 relative">
                 {/* <Image className="w-60 h-[7.5rem] object-cover rounded-xl" width={240} height={120} src={imgSrc} alt={"Screenshot of " + name} /> */}
                 <div className="w-40 sm:w-60 h-[7.5rem] rounded-xl overflow-hidden">{children}</div>
                 <div className="flex flex-col gap-4 px-2">
-                    <h3 className="text-xl">{name}</h3>
+                    <div className="flex justify-between items-center">
+                        <h3 className="text-xl">{name}</h3>
+                        {hasAward && (
+                            <div className="group relative">
+                                <Trophy className="w-6 h-6 text-yellow-500 cursor-pointer" />
+                                <div className="absolute hidden group-hover:block bg-gray-900 p-2 rounded-lg text-sm w-48 -right-2 top-8 z-10 border border-teal-700">
+                                    1st Place Overall and Best Design at RiverHacks 2025
+                                </div>
+                            </div>
+                        )}
+                    </div>
                     <p className="text-xs">{description}</p>
                     <div className="flex flex-wrap gap-2">
                         {skillsComponents}
@@ -38,6 +48,7 @@ export default function Projects() {
                 description="A site to help Austin residents report and track trash and debris in their area and organize trash pickup events"
                 skills={["huggingface", "resnet", "openai api", "austin's 311 api", "leaflet", "nextjs", "postgresql", "zod"]}
                 githubLink="https://github.com/whitallee/trashmapper-atx" liveLink="https://trash-mapper.vercel.app/landing" imgSrc="/placeholder.jpg"
+                hasAward={true}
             ><div className="w-full h-full bg-gray-900 flex justify-center items-center scale-[3]"><Trash/></div></Project>
             <Project
                 name="Brindle Backend"
