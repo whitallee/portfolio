@@ -1,4 +1,4 @@
-import { Backpack, Bot, BrainCircuit, Computer, Cross, University } from "lucide-react"
+import { Backpack, Bot, BrainCircuit, Computer, Cross, Trophy, University } from "lucide-react"
 
 export default function Projects() {
     function TimelineConnector(){
@@ -24,18 +24,25 @@ export default function Projects() {
                 <span className="py-4">Today</span>
                 <TimelineConnector/>
                 <TimelineItem
-                    date="2024 - currently attending"
-                    name="Austin Community College"
-                    description="I am currently obtaining my degree in Software Development, with a passion for learning and a drive to achieve my goal of becoming a great Software Engineer."
-                    reverse={false}
-                ><University/></TimelineItem>
+                    date="April 2025"
+                    name="1st Place at RiverHacks 2025 Hackathon"
+                    description="I won 1st place overall and 1st place for best overall design at RiverHacks 2025 with my project, 'TrashMapper ATX'. This was a great opportunity to showcase my skills and work with a team to build a project that I am proud of. Check it out in the 'projects.json' tab"
+                    reverse={true}
+                ><Trophy/></TimelineItem>
                 <TimelineConnector/>
                 <TimelineItem
                     date="July-September 2024"
                     name="Headstarter AI Fellowship"
                     description="I joined this fellowship between semesters where I built 5 AI projects in 5 weeks. This was also a great opportunity to gain experience working with team mates and collaborating with others in a git repository."
-                    reverse={true}
+                    reverse={false}
                 ><BrainCircuit/></TimelineItem>
+                <TimelineConnector/>
+                <TimelineItem
+                    date="2024 - currently attending"
+                    name="Austin Community College"
+                    description="I am currently obtaining my degree in Software Development, with a passion for learning and a drive to achieve my goal of becoming a great Software Engineer."
+                    reverse={true}
+                ><University/></TimelineItem>
                 <TimelineConnector/>
                 <TimelineItem
                     date="2022"
