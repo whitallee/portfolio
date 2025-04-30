@@ -78,7 +78,7 @@ export default function Projects() {
                 name="Stocks For Noobs"
                 description="An AI chatbot to help teach stock noobs how to begin investing"
                 skills={["nextjs", "react", "openai api", "material-ui", "clerk", "firebase"]}
-                githubLink="https://github.com/vnguye15/HeadStarter-Week-3-Project-AI-Customer-Support" liveLink="https://stocksfornoobs.com/" imgSrc="/placeholder.jpg"
+                githubLink="https://github.com/vnguye15/HeadStarter-Week-3-Project-AI-Customer-Support" liveLink="" imgSrc="/placeholder.jpg"
             ><div className="w-full h-full bg-green-600 flex justify-center items-center scale-[3]"><ChartNoAxesCombined/></div></Project>
             <Project
                 name="FlashMind"
@@ -90,7 +90,7 @@ export default function Projects() {
                 name="Whit's Pantry"
                 description="A utility website for tracking what&apos;s in my pantry"
                 skills={["nextjs", "react", "openai api", "material-ui", "firebase", "firestore"]}
-                githubLink="https://github.com/whitallee/pantry-tracker" liveLink="https://whit-pantry-tracker.vercel.app/" imgSrc="/placeholder.jpg"
+                githubLink="https://github.com/whitallee/pantry-tracker" liveLink="" imgSrc="/placeholder.jpg"
             ><div className="w-full h-full bg-yellow-900 flex justify-center items-center scale-[3]"><Drumstick/></div></Project>
         </div>
     </main>
