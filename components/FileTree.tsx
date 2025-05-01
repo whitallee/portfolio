@@ -18,6 +18,7 @@ export default function FileTree() {
                     <Link className={path === "/projects" ? currentPathClass : "px-2 sm:px-16"} href={"/projects"}>projects.json</Link>
                     <Link className={path === "/contact" ? currentPathClass : "px-2 sm:px-16"} href={"/contact"}>contact.css</Link>
                     <Link className={path === "/about" ? currentPathClass : "px-2 sm:px-16"} href={"/about"}>about.html</Link>
+                    <Link className={path === "/resume" ? currentPathClass : "px-2 sm:px-16"} href={"/resume"}>resume.md</Link>
                 </div>
             </div>
         </>
