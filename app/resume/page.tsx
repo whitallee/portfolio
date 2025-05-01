@@ -1,8 +1,9 @@
+import { Circle } from "lucide-react";
 import Link from "next/link";
 
 export default function Resume() {
   return (
-    <div className="max-w-3xl p-8 bg-white rounded-lg mt-8 h-[calc(100vh-4rem)] overflow-y-auto">
+    <div className="max-w-3xl p-8 bg-white rounded-lg mt-8 mr-2 sm:mr-8 lg:mr-16 h-[calc(100vh-4rem)] overflow-y-auto">
       {/* Download Button */}
       <div className="flex justify-center mb-6">
         <a
@@ -60,11 +61,16 @@ export default function Resume() {
       {/* Skills */}
       <section className="mb-8">
         <h2 className="text-xl font-semibold text-[#AC7BAE] mb-4">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {[
+            "Javascript (Typescript)",
+            "HTML/CSS",
             "Golang",
-            "Javascript(Typescript) / HTML / CSS",
+            "Python Familiarity",
+            "Java Familiarity",
+            "Node.js",
             "React.js",
+            "Next.js",
             "Git/Github Version Control",
             "Front-End Responsive Development",
             "REST API and DB Development",
@@ -72,7 +78,7 @@ export default function Resume() {
             "Testing and debugging skills"
           ].map((skill, index) => (
             <div key={index} className="flex items-center">
-              <span className="w-2 h-2 bg-[#AC7BAE] rounded-full mr-2"></span>
+              <Circle className="w-2 h-2 min-h-2 min-w-2 mr-1 text-[#AC7BAE]" />
               <span className="text-gray-700 text-wrap">{skill}</span>
             </div>
           ))}
@@ -95,7 +101,7 @@ export default function Resume() {
           <ul className="list-disc list-inside text-gray-700 space-y-1">
             <li>Designed, tested and debugged applications from foundation to full production.</li>
             <li>Collaborated, ideated, and communicated with clients in order to make a product that complies with their design requirements.</li>
-            <li>Detected problems provided by client's feedback and implemented solutions.</li>
+            <li>Detected problems provided by client&apos;s feedback and implemented solutions.</li>
             <li>Acquired new skills and understanding of libraries to implement in projects whenever necessary.</li>
             <li>Constructed and managed back end server logic protocols and database connections.</li>
           </ul>
@@ -114,7 +120,7 @@ export default function Resume() {
             <li>Served product samples to customers browsing inside stores or at special events.</li>
             <li>Established and grew the Sunday Freebie Promo at H-E-B Round Rock 02 (373) to the #1 ranking in Central Texas for Freebie Redemptions through the H-E-B app</li>
             <li>Encouraged purchases with consultative and suggestive sales techniques.</li>
-            <li>Answered customers' questions and redirected concerns toward benefits of products.</li>
+            <li>Answered customers&apos; questions and redirected concerns toward benefits of products.</li>
             <li>Note: Promoted from Sales Demo Rep to Sales Demo Specialist before being the acting Sales Demo Lead</li>
           </ul>
         </div>

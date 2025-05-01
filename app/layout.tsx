@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={mavenPro.className}>
         <div className="flex w-screen max-w-full">
           <FileTree/>
-          <div className="pl-2 sm:pl-16">{children}</div>
+          <div className="pl-2 sm:pl-8 lg:pl-16">{children}</div>
         </div>
       </body>
     </html>
