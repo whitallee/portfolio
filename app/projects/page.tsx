@@ -44,10 +44,10 @@ export default function Projects() {
         <h2 className="text-2xl sm:text-4xl pl-4">explore my projects</h2>
         <div className="flex flex-wrap gap-4 overflow-y-scroll p-4 pb-16">
             <Project
-                name="TrashMapper ATX"
+                name="TrashMap ATX"
                 description="A site to help Austin residents report and track trash and debris in their area and organize trash pickup events"
                 skills={["huggingface", "resnet", "openai api", "austin's 311 api", "leaflet", "nextjs", "postgresql", "zod"]}
-                githubLink="https://github.com/whitallee/trashmapper-atx" liveLink="https://trash-mapper.vercel.app/landing" imgSrc="/placeholder.jpg"
+                githubLink="https://github.com/whitallee/trashmapper-atx" liveLink="https://trashmapatx.com/landing" imgSrc="/placeholder.jpg"
                 hasAward={true}
             ><div className="w-full h-full bg-gray-900 flex justify-center items-center scale-[3]"><Trash/></div></Project>
             <Project
