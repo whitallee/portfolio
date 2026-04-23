@@ -1,4 +1,4 @@
-import { Backpack, Bot, BrainCircuit, Computer, Cross, Trophy, University } from "lucide-react"
+import { Backpack, Bot, BrainCircuit, Computer, Cross, Trophy, University, MonitorCog } from "lucide-react"
 
 export default function Projects() {
     function TimelineConnector(){
@@ -28,7 +28,7 @@ export default function Projects() {
                     name="Internship with Bart Decrem at Kochito Labs"
                     description="I worked closely with an experienced Founder to explore new AI concepts and build prototypes. All while working remotely, I built new AI workflows centered around agentic loops and experimenting with new models. Bart and I worked closely to ideate product ideas and distill the benefits and shortcomings of LLM-powered development."
                     reverse={false}
-                ><Trophy/></TimelineItem>
+                ><MonitorCog/></TimelineItem>
                 <TimelineConnector/>
                 <TimelineItem
                     date="April 2025"
