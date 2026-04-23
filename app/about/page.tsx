@@ -24,6 +24,13 @@ export default function Projects() {
                 <span className="py-4">Today</span>
                 <TimelineConnector/>
                 <TimelineItem
+                    date="December 2025 - February 2026"
+                    name="Internship with Bart Decrem at Kochito Labs"
+                    description="I worked closely with an experienced Founder to explore new AI concepts and build prototypes. All while working remotely, I built new AI workflows centered around agentic loops and experimenting with new models. Bart and I worked closely to ideate product ideas and distill the benefits and shortcomings of LLM-powered development."
+                    reverse={false}
+                ><Trophy/></TimelineItem>
+                <TimelineConnector/>
+                <TimelineItem
                     date="April 2025"
                     name="1st Place at RiverHacks 2025 Hackathon"
                     description="I won 1st place overall and 1st place for best overall design at RiverHacks 2025 with my project, 'TrashMapper ATX'. This was a great opportunity to showcase my skills and work with a team to build a project that I am proud of. Check it out in the 'projects.json' tab"
@@ -31,7 +38,7 @@ export default function Projects() {
                 ><Trophy/></TimelineItem>
                 <TimelineConnector/>
                 <TimelineItem
-                    date="July-September 2024"
+                    date="July - September 2024"
                     name="Headstarter AI Fellowship"
                     description="I joined this fellowship between semesters where I built 5 AI projects in 5 weeks. This was also a great opportunity to gain experience working with team mates and collaborating with others in a git repository."
                     reverse={false}
