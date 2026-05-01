@@ -40,14 +40,14 @@ export default function Projects() {
             <h2 className="text-2xl sm:text-4xl pl-4">explore my projects</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-scroll p-4 pr-8 pb-16 w-full">
                 <Project
-                    name="Brindle - Animal Family"
+                    name="Brindl - Animal Family"
                     description="A clean, full-featured PWA for managing your animals, enclosures, and care routines. Track feeding schedules, repeating tasks, and enclosure needs — installable on any device with push notifications."
                     skills={["next.js 15", "typescript", "tailwind", "shadcn/ui", "tanstack query", "pwa"]}
                     githubLink="https://github.com/whitallee/animal-family-web" liveLink="https://animal-family-web.vercel.app/welcome"
                 ><div className="w-full h-full bg-green-900 flex justify-center items-center"><PawPrint size={64} /></div></Project>
                 <Project
-                    name="Brindle - Animal Family Backend"
-                    description="A REST API backend powering Brindle across all platforms, handling animal, enclosure, and task management with a focus on performance and clean architecture."
+                    name="Brindl - Animal Family Backend"
+                    description="A REST API backend powering Brindl across all platforms, handling animal, enclosure, and task management with a focus on performance and clean architecture."
                     skills={["golang", "gorilla mux", "mysql", "jwt"]}
                     githubLink="https://github.com/whitallee/animal-family-backend" liveLink=""
                 ><div className="w-full h-full bg-gray-600 flex justify-center items-center"><Squirrel size={64} /></div></Project>
