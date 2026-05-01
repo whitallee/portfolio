@@ -9,7 +9,7 @@ const mavenPro = Maven_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "whitcodes",
-  description: "A collection of Whit Allee's coding projects and client work",
+  description: "A collection of Whit Allee-Milan's coding projects and client work",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={mavenPro.className}>
         <div className="flex w-screen max-w-full">
           <FileTree/>
-          <div className="pl-2 sm:pl-8 lg:pl-16">{children}</div>
+          <div className="pl-4 sm:pl-8 lg:pl-16 w-full">{children}</div>
         </div>
       </body>
     </html>
