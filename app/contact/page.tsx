@@ -39,9 +39,9 @@ export default function Contact() {
             <h2 className="text-2xl sm:text-4xl">reach out anytime</h2>
             <div className="text-xl sm:text-2xl flex flex-col">
                 <span className="text-teal-700">.socials <span className="text-white">&#10100;</span></span>
-                <span className="indent-12 pb-4">email: <Link href="mailto:whit@whitcodes.dev" className="text-teal-400 text-glow">whit@whitcodes.dev</Link></span>
-                <span className="indent-12">github: <Link href="https://github.com/whitallee" className="text-teal-400 text-glow">whitallee</Link></span>
-                <span className="indent-12">linkedin: <Link href="https://www.linkedin.com/in/whit-swe/" className="text-teal-400 text-glow">whit-swe</Link></span>
+                <span className="indent-12">email: <Link href="mailto:whit@whitcodes.dev" target="_blank" className="text-teal-400 text-glow">whit@whitcodes.dev</Link></span>
+                <span className="indent-12">github: <Link href="https://github.com/whitallee" target="_blank" className="text-teal-400 text-glow">whitallee</Link></span>
+                <span className="indent-12">linkedin: <Link href="https://www.linkedin.com/in/whit-swe/" target="_blank" className="text-teal-400 text-glow">whit-swe</Link></span>
                 <span className="text-white">&#10101;</span>
             </div>
 
@@ -76,7 +76,7 @@ export default function Contact() {
                         value={message}
                         onChange={e => setMessage(e.target.value)}
                         className={inputClass + " resize-none h-32"}
-                        placeholder="say hi..."
+                        placeholder="let's build something together..."
                     />
                 </div>
                 <div className="pl-4">
