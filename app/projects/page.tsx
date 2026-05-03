@@ -1,4 +1,4 @@
-import { ChartNoAxesCombined, Drumstick, Gem, PawPrint, Scissors, Zap, Squirrel, Trash, Trophy } from "lucide-react";
+import { ChartNoAxesCombined, Drumstick, Gem, PawPrint, Scissors, Zap, Squirrel, Trash, Trophy, UtensilsCrossed, ShoppingCart, ScanSearch } from "lucide-react";
 import Link from "next/link";
 
 export default function Projects() {
@@ -43,7 +43,7 @@ export default function Projects() {
                     name="Brindl - Animal Family"
                     description="A clean, full-featured PWA for managing your animals, enclosures, and care routines. Track feeding schedules, repeating tasks, and enclosure needs — installable on any device with push notifications."
                     skills={["next.js 15", "typescript", "tailwind", "shadcn/ui", "tanstack query", "pwa"]}
-                    githubLink="https://github.com/whitallee/animal-family-web" liveLink="https://animal-family-web.vercel.app/welcome"
+                    githubLink="https://github.com/whitallee/animal-family-web" liveLink="https://brindl.vercel.app/welcome"
                 ><div className="w-full h-full bg-green-900 flex justify-center items-center"><PawPrint size={64} /></div></Project>
                 <Project
                     name="Brindl - Animal Family Backend"
@@ -58,6 +58,27 @@ export default function Projects() {
                     githubLink="https://github.com/jakekinchen/trash-mapper" liveLink="https://trashmapatx.com/landing"
                     hasAward={true}
                 ><div className="w-full h-full bg-gray-900 flex justify-center items-center"><Trash size={64} /></div></Project>
+                <Project
+                    name="AI Site Audit"
+                    description="Paste in any URL and get a scored AI-powered audit across SEO, UX, Performance, and Conversion — each with specific issues and actionable recommendations. Results export as a formatted PDF."
+                    skills={["go", "claude api", "chromedp", "docker", "railway"]}
+                    githubLink="https://github.com/whitallee/ai-site-audit"
+                    liveLink="https://whits-ai-site-audit.up.railway.app/"
+                ><div className="w-full h-full bg-blue-900 flex justify-center items-center"><ScanSearch size={64} /></div></Project>
+                <Project
+                    name="Store Assistant"
+                    description="A Node.js API that uses headless Chromium to look up product locations at H-E-B. Triggered via Siri/Apple Shortcuts — sends your GPS address to auto-select the nearest store and returns product name, price, stock status, and aisle location."
+                    skills={["node.js", "puppeteer", "chromium", "apple shortcuts"]}
+                    githubLink="https://github.com/whitallee/store-assistant"
+                    liveLink=""
+                ><div className="w-full h-full bg-red-900 flex justify-center items-center"><ShoppingCart size={64} /></div></Project>
+                <Project
+                    name="Sales Kitchen Recipe Tracker"
+                    description="An internal tool for a retail sampling kitchen. Staff upload recipe card photos which are processed by AI vision to extract and structure the data. Customers scan a QR code to browse the archive and see what's currently featured."
+                    skills={["next.js", "typescript", "supabase", "postgresql", "openai vision", "tailwind"]}
+                    githubLink="https://github.com/whitallee/cooking-connections-recipe-history"
+                    liveLink="https://kitchen-recipe-history.vercel.app/451"
+                ><div className="w-full h-full bg-orange-900 flex justify-center items-center"><UtensilsCrossed size={64} /></div></Project>
                 <Project
                     name="Barking Beauties"
                     description="A landing page and informational site for clients who run a pet spa"
