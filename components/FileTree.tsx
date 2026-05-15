@@ -13,7 +13,8 @@ const navLinks = [
     { href: "/projects", label: "projects.json" },
     { href: "/contact", label: "contact.css" },
     { href: "/about", label: "about.html" },
-    { href: "/resume", label: "resume.md" },
+    { href: "/resume", label: "resume.pdf" },
+    { href: "/blog", label: "blog.md" },
 ]
 
 export default function FileTree() {
