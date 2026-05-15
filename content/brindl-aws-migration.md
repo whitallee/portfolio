@@ -1,41 +1,103 @@
 ---
-title: "Brindl Backend: From Railway to Production-Grade AWS"
+title: "Brindl Backend: From a Monolithic Next.js App to AWS Infrastructure"
 date: "2026-05-15"
-description: "Why I migrated my Go API off Railway and how I built a proper AWS stack with ECS Fargate, RDS, ALB, and GitHub Actions CI/CD."
+description: "How rebuilding Brindl in Go led me into Docker, AWS infrastructure, CI/CD, and modern cloud architecture."
 category: "build"
-tags: ["aws", "go", "docker", "devops", "ecs", "github-actions"]
+tags: ["aws", "go", "docker", "devops", "ecs", "postgresql", "github-actions"]
 ---
 
-## The Starting Point
+# Brindl Backend: From a Monolithic Next.js App to AWS Infrastructure
 
-Brindl started as a personal project — a PWA to help reptile and exotic animal owners manage feeding schedules, enclosure conditions, and care routines. The backend is a Go REST API, and when I first shipped it, I threw it on Railway. Railway is great for getting something live fast, and it did exactly that. But as I thought more seriously about Brindl as a real product, Railway started to feel like a ceiling.
+Brindl started as a very simple necessity project.
 
-The concerns were practical: limited control over networking, no real database isolation, no path to production-grade security practices. I wanted to build something I could actually stand behind architecturally, not just something that was running.
+At the time, I was working at a pet store, and my wife and I had accumulated a growing collection of reptiles and exotic animals at home. Between feeding schedules, enclosure maintenance, supplements, baths for the furry ones, and recurring care routines, it became difficult to keep everything organized consistently. I wanted something tailored specifically to the way we cared for our animals, so I decided to build it myself.
+
+The first version of Brindl was called Animal Family and was a monolithic Next.js application written entirely in TypeScript. Frontend and backend lived together in the same project, and visually it was very much function over form. I was still early in my programming journey, writing almost everything by hand without AI assistance, and moving relatively slowly while learning concepts as I went. But despite the rough edges, it became one of the most important projects in my growth as a developer because it forced me to learn how to build and maintain a real CRUD application from scratch.
+
+At that stage, Brindl wasn't even a PWA yet. It was simply a proof of concept that solved a real problem for me.
+
+## Why I Rebuilt the Backend in Go
+
+As the project grew, I started becoming interested in Go.
+
+I had been reading *Learning Go* by Jon Bodner and kept hearing developers talk about the language's simplicity, strong standard library, and performance characteristics. Since Brindl was already becoming my long-term passion project, it felt like the perfect opportunity to explore a different backend architecture and push myself into unfamiliar territory.
+
+So instead of continuing to expand the original Next.js backend, I split the project apart and rebuilt the API separately in Go.
+
+This wasn't driven by frustration with Next.js or TypeScript — both were great learning tools for me — but more by curiosity and a desire to understand backend systems at a deeper level. Rebuilding the backend gave me hands-on experience with REST APIs, database design, authentication flows, containerization, and infrastructure decisions that I hadn't fully encountered in smaller projects before.
+
+## Railway Wasn't the Problem
+
+One thing I wanted to make sure was not implied when writing about this migration was the idea that Railway had become limiting or problematic.
+
+Honestly, Railway was excellent.
+
+It was simple, fast, and developer-friendly, and it remains one of my favorite ways to deploy personal projects quickly. I still think it's an incredible platform, especially for small teams or solo developers trying to move fast.
+
+The real reason I moved Brindl to AWS wasn't because Railway failed me — it was because I wanted the experience of building production-style infrastructure myself.
+
+I had taken cloud infrastructure and networking courses where we used AWS in controlled classroom environments, but I had never implemented those concepts deeply in one of my own projects outside of small experiments. Brindl felt like the perfect opportunity because I genuinely care about the project long-term and wanted to understand what exists underneath the abstraction layers that platforms like Railway simplify away.
+
+Once I started the migration, I realized how much modern hosting platforms handle for developers behind the scenes.
+
+Networking, security groups, container orchestration, load balancing, IAM permissions, TLS certificates, deployment pipelines, private networking — there are an enormous number of moving pieces involved in even a relatively small cloud architecture. Building this stack forced me to think much more from a DevOps and infrastructure perspective instead of only from an application-development perspective.
 
 ## Containerizing the API
 
-The first step was making the app portable. I wrote a multi-stage Dockerfile for the Go API — a build stage that compiles the binary and a lean runtime stage that only ships the binary itself. Multi-stage builds matter here because Go compiles to a single static binary, so the final image doesn't need the compiler, the source, or any build tooling. The result is a small, clean image with a minimal attack surface.
+The first step was making the backend portable.
+
+I wrote a multi-stage Dockerfile for the Go API with a dedicated build stage and a minimal runtime image. One of the things I quickly appreciated about Go is how naturally it fits containerized environments. Since Go compiles into a single static binary, the final runtime container can stay extremely lean without needing the compiler or source code included.
+
+The end result was a smaller image, cleaner deployments, and a much better understanding of how containerized applications actually move through deployment pipelines.
 
 ## The AWS Stack
 
-Once I had a container, I needed somewhere to run it that gave me real infrastructure control. Here's what I landed on:
+After containerizing the API, I started building the AWS infrastructure around it.
 
-**ECS Fargate** handles the container runtime. Fargate is serverless compute for containers — I define the task (CPU, memory, image, env vars) and AWS runs it without me managing EC2 instances. For a backend at this scale, it's the right tradeoff: operational simplicity without giving up the control that comes with containerization.
+### ECS Fargate
 
-**RDS (MySQL)** lives in the same VPC as the Fargate task, but in a private subnet. Security groups are configured so the database only accepts connections from the ECS service — nothing else can reach it, not even from within the VPC. This is the kind of isolation that Railway simply can't give you.
+The Go API runs on AWS Fargate through ECS.
 
-**ALB + ACM** sits in front of everything. The Application Load Balancer handles HTTPS termination using a certificate provisioned through AWS Certificate Manager, pointed at a custom subdomain. Traffic comes in on 443, the cert is validated, and the ALB forwards to the Fargate tasks on the internal port. The API itself never has to deal with TLS.
+Fargate handles the container runtime without requiring me to manage EC2 instances directly. I can define CPU and memory requirements, provide the container image, configure environment variables, and let AWS handle the orchestration layer underneath.
 
-**S3** handles public asset storage — static files that the API serves references to rather than serving directly.
+For Brindl's current scale, it felt like a good balance between operational simplicity and infrastructure control.
 
-## CI/CD Without Long-Lived Secrets
+### RDS PostgreSQL
 
-This was the part I cared most about getting right. The GitHub Actions pipeline builds and pushes the Docker image to ECR and deploys the new task definition to ECS on every push to main. But instead of storing an AWS access key as a GitHub secret (a common and risky pattern), the pipeline authenticates using OIDC.
+The database layer runs on PostgreSQL through Amazon RDS.
 
-OIDC lets GitHub Actions assume an IAM role directly, with a trust policy that scopes it to a specific repo and branch. There are no long-lived credentials anywhere — not in GitHub, not in the workflow file, not rotated manually on a schedule. The credentials are short-lived tokens that GitHub and AWS negotiate at runtime. It's the approach AWS recommends, and it's the one I should have been using from day one on other projects.
+The RDS instance sits inside a private subnet within the VPC, and security groups restrict access so only the ECS service can communicate with it directly. Setting this up manually helped me better understand network isolation, internal traffic flow, and how cloud services securely communicate with one another.
+
+### ALB + ACM
+
+An Application Load Balancer sits in front of the ECS service and handles HTTPS termination using certificates provisioned through AWS Certificate Manager.
+
+This means the API itself doesn't need to manage TLS directly. Traffic enters through HTTPS on the load balancer, certificates are validated there, and requests are forwarded internally to the running containers.
+
+### S3
+
+S3 handles public asset storage and gives me a clean separation between uploaded/static assets and the API itself.
+
+## CI/CD and OIDC Authentication
+
+One of the biggest goals of this migration was practicing modern deployment standards.
+
+The GitHub Actions pipeline builds the Docker image, pushes it to Amazon ECR, and deploys updated task definitions to ECS automatically whenever changes are pushed to the main branch.
+
+Instead of storing long-lived AWS access keys in GitHub secrets, the workflow authenticates using OIDC federation between GitHub Actions and AWS IAM.
+
+At first, I mostly implemented this because it was considered the modern industry-standard approach, but setting it up taught me a lot about trust relationships, temporary credentials, IAM policies, and how CI/CD systems securely authenticate in production environments.
+
+Much of this migration was ultimately about learning the "real" versions of concepts that simpler platforms abstract away.
 
 ## What Changed
 
-The migration wasn't just about the infrastructure — it changed how I think about the project. When everything lived on Railway, the backend felt like a prototype. Now there's a real network boundary around the database, a real deployment pipeline with no secrets to manage, and a real HTTPS endpoint on a domain I control.
+The biggest thing that changed wasn't just the infrastructure — it was my perspective.
 
-Brindl is still in active development, but the infrastructure it runs on is no longer something I'd need to apologize for.
+Before this project, I mostly thought about software in terms of application code and features. Building Brindl's AWS stack forced me to think much more holistically about deployment architecture, networking, security, automation, and long-term scalability.
+
+It also made me realize how much work platforms like Railway save developers from needing to think about in the early stages of a project.
+
+Brindl is still actively evolving, and right now I'm effectively the only real user. But because this is a project I genuinely hope to continue growing publicly over time, I wanted infrastructure that gives me flexibility and control as the application scales in the future instead of needing to completely rethink deployment later.
+
+More than anything, this migration became an educational deep dive into how modern cloud infrastructure actually works underneath the abstractions.
