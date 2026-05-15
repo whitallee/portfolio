@@ -47,8 +47,8 @@ export default function Projects() {
                 ><div className="w-full h-full bg-green-900 flex justify-center items-center"><PawPrint size={64} /></div></Project>
                 <Project
                     name="Brindl - Animal Family Backend"
-                    description="A REST API backend powering Brindl across all platforms, handling animal, enclosure, and task management with a focus on performance and clean architecture."
-                    skills={["golang", "gorilla mux", "mysql", "jwt"]}
+                    description="A production-grade Go REST API powering Brindl across all platforms. Containerized with Docker and deployed on ECS Fargate with RDS in a private VPC subnet. HTTPS via ALB + ACM, S3 for asset hosting, and a GitHub Actions CI/CD pipeline using OIDC."
+                    skills={["golang", "gorilla mux", "postgresql", "docker", "aws ecs", "aws rds", "aws s3", "github actions"]}
                     githubLink="https://github.com/whitallee/animal-family-backend" liveLink=""
                 ><div className="w-full h-full bg-gray-600 flex justify-center items-center"><Squirrel size={64} /></div></Project>
                 <Project
