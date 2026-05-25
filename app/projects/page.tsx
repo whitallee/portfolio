@@ -1,4 +1,4 @@
-import { ChartNoAxesCombined, Drumstick, Gem, PawPrint, Scissors, Zap, Squirrel, Trash, Trophy, UtensilsCrossed, ShoppingCart, ScanSearch } from "lucide-react";
+import { ChartNoAxesCombined, Drumstick, Gem, PawPrint, Scissors, Zap, Squirrel, Terminal, Trash, Trophy, UtensilsCrossed, ShoppingCart, ScanSearch } from "lucide-react";
 import Link from "next/link";
 
 export default function Projects() {
@@ -51,6 +51,13 @@ export default function Projects() {
                     skills={["golang", "gorilla mux", "postgresql", "docker", "aws ecs", "aws rds", "aws s3", "github actions"]}
                     githubLink="https://github.com/whitallee/animal-family-backend" liveLink=""
                 ><div className="w-full h-full bg-gray-600 flex justify-center items-center"><Squirrel size={64} /></div></Project>
+                <Project
+                    name="Software Solutions Initiative"
+                    description="A biweekly meetup started from scratch at an HEB store to give coworkers space to explore software and build real tools. 12 meetings over 8 months, 2 production tools shipped, and a custom-built site to track projects, meeting archives, and resources — no experience required to join."
+                    skills={["next.js", "typescript", "tailwind", "community organizing", "teaching"]}
+                    githubLink=""
+                    liveLink="https://software-solutions-red.vercel.app/"
+                ><div className="w-full h-full bg-red-900 flex justify-center items-center"><Terminal size={64} /></div></Project>
                 <Project
                     name="TrashMap ATX"
                     description="A site to help Austin residents report and track trash and debris in their area and organize trash pickup events"
