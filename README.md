@@ -1,1 +1,1 @@
-This is my (Whit Allee) portfolio website for anyone interested in what I have to offer. Feel free to reach out with any inquiries!
+This is my (Whit Milan) portfolio website for anyone interested in what I have to offer. Feel free to reach out with any inquiries!

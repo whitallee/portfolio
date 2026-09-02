@@ -40,7 +40,7 @@ export default function Contact() {
             <div className="text-xl sm:text-2xl flex flex-col">
                 <span className="text-teal-700">.socials <span className="text-white">&#10100;</span></span>
                 <span className="indent-12">email: <Link href="mailto:whit@whitcodes.dev" target="_blank" className="text-teal-400 text-glow">whit@whitcodes.dev</Link></span>
-                <span className="indent-12">github: <Link href="https://github.com/whitallee" target="_blank" className="text-teal-400 text-glow">whitallee</Link></span>
+                <span className="indent-12">github: <Link href="https://github.com/whitcodes" target="_blank" className="text-teal-400 text-glow">whitcodes</Link></span>
                 <span className="indent-12">linkedin: <Link href="https://www.linkedin.com/in/whit-swe/" target="_blank" className="text-teal-400 text-glow">whit-swe</Link></span>
                 <span className="text-white">&#10101;</span>
             </div>
