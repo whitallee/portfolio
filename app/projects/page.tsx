@@ -43,13 +43,13 @@ export default function Projects() {
                     name="Brindl - Animal Family"
                     description="A clean, full-featured PWA for managing your animals, enclosures, and care routines. Track feeding schedules, repeating tasks, and enclosure needs — installable on any device with push notifications."
                     skills={["next.js 15", "typescript", "tailwind", "shadcn/ui", "tanstack query", "pwa"]}
-                    githubLink="https://github.com/whitallee/animal-family-web" liveLink="https://brindl.vercel.app/welcome"
+                    githubLink="https://github.com/whitcodes/animal-family-web" liveLink="https://brindl.vercel.app/welcome"
                 ><div className="w-full h-full bg-green-900 flex justify-center items-center"><PawPrint size={64} /></div></Project>
                 <Project
                     name="Brindl - Animal Family Backend"
                     description="A production-grade Go REST API powering Brindl across all platforms. Containerized with Docker and deployed on ECS Fargate with RDS in a private VPC subnet. HTTPS via ALB + ACM, S3 for asset hosting, and a GitHub Actions CI/CD pipeline using OIDC."
                     skills={["golang", "gorilla mux", "postgresql", "docker", "aws ecs", "aws rds", "aws s3", "github actions"]}
-                    githubLink="https://github.com/whitallee/animal-family-backend" liveLink=""
+                    githubLink="https://github.com/whitcodes/animal-family-backend" liveLink=""
                 ><div className="w-full h-full bg-gray-600 flex justify-center items-center"><Squirrel size={64} /></div></Project>
                 <Project
                     name="Software Solutions Initiative"
@@ -69,34 +69,34 @@ export default function Projects() {
                     name="AI Site Audit"
                     description="Paste in any URL and get a scored AI-powered audit across SEO, UX, Performance, and Conversion — each with specific issues and actionable recommendations. Results export as a formatted PDF."
                     skills={["go", "claude api", "chromedp", "docker", "railway"]}
-                    githubLink="https://github.com/whitallee/ai-site-audit"
+                    githubLink="https://github.com/whitcodes/ai-site-audit"
                     liveLink="https://whits-ai-site-audit.up.railway.app/"
                 ><div className="w-full h-full bg-blue-900 flex justify-center items-center"><ScanSearch size={64} /></div></Project>
                 <Project
                     name="Store Assistant"
                     description="A Node.js API that uses headless Chromium to look up product locations at H-E-B. Triggered via Siri/Apple Shortcuts — sends your GPS address to auto-select the nearest store and returns product name, price, stock status, and aisle location."
                     skills={["node.js", "puppeteer", "chromium", "apple shortcuts"]}
-                    githubLink="https://github.com/whitallee/store-assistant"
+                    githubLink="https://github.com/whitcodes/store-assistant"
                     liveLink=""
                 ><div className="w-full h-full bg-red-900 flex justify-center items-center"><ShoppingCart size={64} /></div></Project>
                 <Project
                     name="Sales Kitchen Recipe Tracker"
                     description="An internal tool for a retail sampling kitchen. Staff upload recipe card photos which are processed by AI vision to extract and structure the data. Customers scan a QR code to browse the archive and see what's currently featured."
                     skills={["next.js", "typescript", "supabase", "postgresql", "openai vision", "tailwind"]}
-                    githubLink="https://github.com/whitallee/cooking-connections-recipe-history"
+                    githubLink="https://github.com/whitcodes/cooking-connections-recipe-history"
                     liveLink="https://kitchen-recipe-history.vercel.app/451"
                 ><div className="w-full h-full bg-orange-900 flex justify-center items-center"><UtensilsCrossed size={64} /></div></Project>
                 <Project
                     name="Barking Beauties"
                     description="A landing page and informational site for clients who run a pet spa"
                     skills={["nextjs", "react", "tailwind"]}
-                    githubLink="https://github.com/whitallee/barkingbeauties" liveLink="https://barkingbeauties.netlify.app/"
+                    githubLink="https://github.com/whitcodes/barkingbeauties" liveLink="https://barkingbeauties.netlify.app/"
                 ><div className="w-full h-full bg-[#c376ff] flex justify-center items-center"><Scissors size={64} /></div></Project>
                 <Project
                     name="Maria Elena by Milan Creations"
                     description="An eCommerce landing page as proof of concept for a client who makes custom jewelry and decor"
                     skills={["nextjs", "react", "tailwind"]}
-                    githubLink="https://github.com/whitallee/maria-elena" liveLink="https://milan-creations-app-fb.web.app/"
+                    githubLink="https://github.com/whitcodes/maria-elena" liveLink="https://milan-creations-app-fb.web.app/"
                 ><div className="w-full h-full bg-[#b169c7] flex justify-center items-center"><Gem size={64} /></div></Project>
                 <Project
                     name="Stocks For Noobs"

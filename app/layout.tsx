@@ -9,7 +9,7 @@ const mavenPro = Maven_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "whitcodes",
-  description: "A collection of Whit Allee-Milan's coding projects and client work",
+  description: "A collection of Whit Milan's coding projects and client work",
 };
 
 export default function RootLayout({
